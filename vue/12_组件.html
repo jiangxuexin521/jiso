@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 父组件 -->
+    <div id="app">
+      嘿嘿
+      <my-component content="一年后我要进小米"></my-component>
+      必须实现
+      <my-component name="姜雪欣" content="我要进小米"></my-component>
+      加油
+      <hr />
+      <my-component name="仙女本人" content="进小米" @xx="fn"></my-component>
+    </div>
+    <div id="app2">
+      <!-- <my-component></my-component> -->
+    </div>
+    <!-- 子组件模板 -->
+    <template id="temp">
+      <div>
+        <h2>{{name}} {{count}}</h2>
+        <p>{{content}}</p>
+        <button @click="add()">++</button>
+      </div>
+    </template>
+    <script src="vue/vue.js"></script>
+    <script>
+      //   父组件->调用子组件 传参->props
+      //   子组件->父组件传值 $emit(xx,'要向父组件传递的值')
+      new Vue({
+        el: "#app",
+        components: {
+          "my-component": {
+            template: "#temp",
+            //props:['name','content'],//接收调用传过来的参数
+            props: {
+              name: {
+                type: String, //类型
+                default: "嘿嘿", //默认值
+              },
+              content: String,
+            },
+            data() {
+              return {
+                count: 0,
+              };
+            },
+            methods: {
+              add() {
+                this.count++;
+                //第一个参数 父组件中定义的事件
+                this.$emit("xx", "子组件的值");
+              },
+            },
+          },
+        },
+        methods: {
+          fn(val) {
+            //val 获取到子组件传过来的值
+            console.log(val);
+          },
+        },
+      });
+      new Vue({
+        el: "#app2",
+      });
+    </script>
+  </body>
+</html>

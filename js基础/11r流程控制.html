@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.if语法结构
+        // if (条件表达式) {
+        //     //执行语句
+        // }
+
+
+        //案例  :进入网吧
+        // var age = prompt('请输入您的年龄：');
+        // if (age >= 18) {
+        //     alert('可以玩游戏啦');
+        // } alert('出去')
+
+
+        //判断闰年
+        // var year = prompt('请输入年份：')
+        // if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        //     alert('是闰年');
+
+        // }
+        // else {
+        //     alert('是平年');
+        // }
+
+
+        //三元运算表达式
+        //条件表达式 ？ 表达式1：表达式2
+        //执行思路： 真 返回表达式1的值 假 返回表达式2的值
+        // var num = 16;
+        // var result = num > 10 ? '是的' : '不是的'//我们知道表达式是有返回值的
+        // console.log(result);
+
+        //案例 数字补0
+        // var time = prompt('请输入0-59之间的数字');
+        // //用三元表达式
+        // var result = time < 10 ? '0' + time : time;
+        // alert(result);
+
+
+        // switch (表达式) {
+        //     case value1:
+        //         执行语句1；
+        //         break;
+        //     case value2:
+        //         执行语句2
+        //         break；
+
+
+
+        //defult：
+        //执行最后的语句
+        // }
+        // 执行思路 利用表达式的值 和case后面的选项值相匹配 如果匹配上就执行case
+
+        // switch (2) {
+        //     case 1:
+        //         console.log('这是1');
+        //         break;
+        //     case 2:
+        //         console.log('这是2');
+        //         break;
+        //     default:
+        //         console.log('没有匹配结果')
+        // }
+
+        //switch 注意事项
+        //1.开发里面 表达式经常写成变量
+        //2.我们num的值和case里面的值相匹配的时候是全等 必须是值和数据类型一致才可以num==1
+        //3.如果当前的case里面没有break 则不会退出switch 继续执行下一个case
+
+
+        //案例 查询水果案例
+        // var fruit = prompt('输入水果名称:');
+        // switch (fruit) {
+        //     case '苹果':
+        //         alert('苹果的价格是3.5/斤');
+        //         break;
+        //     case '香蕉':
+        //         alert('香蕉的价格是4/斤');
+        //         break;
+        //     case '榴莲':
+        //         alert('价格是50/斤');
+
+        //     default:
+        //         alert('没有此水果')
+
+
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

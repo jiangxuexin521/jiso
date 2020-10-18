@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.想要一个变量自己加1 num=num+1 比较麻烦
+        // var num = 1;
+        // num = num + 1;//++num;递增运算符
+        // console.log(num);
+        // //递增++ 递减-- 必须和变量配合使用
+        // //2.前置递增运算符 ++ 写在变量前 口诀：先自+1 后返回值
+        // var age = 10;
+        // ++age;//类似于  age=age+1;
+        // //3.
+        // var p = 10;
+        // console.log(++p + 10);//21
+        // //后置递增运算符
+        // var num = 8;
+        // num++;//num=num+1
+        // console.log(num);
+        // //1.前置自增和后置自增如果单独使用 效果是一样的
+        // //2/后置自增 口诀和前置不同 ：先返回原值后自增
+        // var age = 10;
+        // console.log(age++ + 10);//原本age的原值就是10 所有10+10=20
+
+
+
+        //L练习
+
+        var e = 10;
+        var f = e++ + ++e;//1.e++=10 e=11; 2.e=12 ++e返回12
+        console.log(f);
+
+
+
+    </script>
+</body>
+
+</html>

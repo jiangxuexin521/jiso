@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <h1 @click="change">
+          {{a}}
+      </h1>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                a: "hello"
+            },
+            methods:{
+                change(){
+                    this.a="我是你爸爸！"
+                }
+            }
+        })
+        console.log(vm.$el)
+        console.log(vm.$data)
+    </script>
+</body>
+</html>

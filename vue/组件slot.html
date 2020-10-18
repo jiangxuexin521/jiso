@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dialog-mask {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .dialog-container {
+        width: 300px;
+        height: 200px;
+        background-color: blueviolet;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /* margin-left:-150px;
+        margin-top:-100px; */
+        transform: translate(-50%, -50%);
+      }
+      .dialog-title {
+        border-bottom: 1px solid #ccc;
+      }
+      .close {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="show()">show</button>
+      <my-dialog title="登陆" v-if="isShow" @show="fn">
+        <div slot="slot">
+          <div>
+            <label for="name">用户名</label>
+            <input id="name" type="text" />
+          </div>
+          <div>
+            <button>登陆</button>
+          </div>
+        </div>
+        <div slot="slot2">
+          <p>我是底部</p>
+        </div>
+      </my-dialog>
+    </div>
+    <template id="temp>"
+      <div class="dialog-mask">
+        <div class="dialog-container">
+          <div class="dialog-title">{{title}}</div>
+          <div></div>
+        </div>
+      </div>
+      <div class="">
+        <div>
+          <div>标题</div>
+        </div>
+        <div>内容</div>
+      </div>
+    </div>
+    <script src="vue/vue.js"></script>
+    <script>
+      new Vue({
+          el:"#app"
+          data:{
+
+          },
+          componrnts:{
+
+          }
+      })
+    </script>
+  </body>
+</html>

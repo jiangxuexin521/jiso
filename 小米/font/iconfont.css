@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1595299166713'); /* IE9 */
+  src: url('iconfont.eot?t=1595299166713#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP8AAsAAAAACGgAAAOtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqEWIQCATYCJAMMCwgABCAFhG0HOBtCB1FULdJkPwfcdngsx7MLIkWZmam/RuMXEjqxb99Rxnj4b79238yso55EI1H0dBKJZokSligWE6Rg0Tv1T+nV5k0np4d83HtALeTenh7stDXnCIWPUCM5RajYlfMtp5fPD9zaE9S7n89zOb678g6s9YECDCkcc9ieeHQvwDigwMaYtgSzEsaGsZsoD+I0gbY5epDD3eVe6SjApEBcxqFb6aScSk1taAr1kpVFPKlppuu0q+KR/z7+zKJDUsvAWUcX26Cy+IzPlLtV10mGuuP5oa0jYx1QiOPS4JF6mF7Hqu0EG+brm4vgM1UVJUO52j88kiDqgLFH5C5nEp+BlbFaVJ+x6sbG1zEAeMa/6RoBBvTK073D6G218At+e3o6U3xkgcFNhAR7NbDOzq4ucfRMGc8YERes62C0Y5nF8zMGRqRB93pmRteYJAI7eTLr7kF5enpG6sbG4Oho7XA3urgJt+o2GOtY/zCjqAiOxvAwRkS6D/ZKGW4h8tV2wi5e/hnYYXEy6vD0cQE+/3V+arDRVbWL6+d5fdgpEz17enXPaKMbdY5bMPa0Hjsvw100oGdMq8PuusMeeZZ7wQ9tC0aT5ZeiI4VceXjTh1DYWy1XtWCNZQwR2a6WR2JGTKJfOX/7bgUqBOQQ9N7b5akwBHaC5sEbTuBDlUN+Fb4jlaMfhxihOzcoUqYZ9WglT/WdhPmr6V+VH5l8jjFKe2577gNKA8M5awRqOMO5KDsm8UiQNQadAoH8zq7klBSyqzO/n0CX3k5LcYnyewtKl9Iu8iA5jEkmM8PQbrkZ2lJ/VAqolBSbRJmoWqTF9CQ5gZeULqcJQyAa4GdYpf6zjILkq79+mcfx0tsoQbtv22angNfNt8W17SppSrRW/WN/ARXwlnA1oisX26BW6eeye71vUS7K9YgKiA65728dfZfZ0DQaI2mYRdY0TxTuOmo6NlDXtIO2NZ7rO4blqovSwqoKAWHAFJI+L8gG7BGFe4eaMc+oG4g62o5DdMeOxYh7royuYADeD2KfCoU80gtqrxiazOWkhvOfyDqOwXQ0yeb2WCCPMUe/w5mIAsWUw044D7OMoGRK0JdRJFLOx2NV9qaRT3ml5wBDLoECINYPSOEjBUU7i17u+1coZGRcXMPoSD4hpsW9A2MGjFoQe2PRinEt/fO8hWbyCSWPS8RIDniIfpTBNAHZ5cMSyCdGknskS3OGUrvEtsbR/Ob8+XZBGzg0R4ocRTl1Wdp5ZHRkqFIBAAAA') format('woff2'),
+  url('iconfont.woff?t=1595299166713') format('woff'),
+  url('iconfont.ttf?t=1595299166713') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1595299166713#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconcart:before {
+  content: "\e602";
+}
+
+.iconsoushuo:before {
+  content: "\e601";
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .app {
+        height: 400px;
+        width: 400px;
+        background-color: blueviolet;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <div class="app">
+        <h1 id="text">100</h1>
+        <button id="btn">开始</button>
+    </div>
+    <script>
+        var num = 100;
+        var isRun = true;
+        var timer = null;
+        var oText = document.getElementById("text");
+        var oBtn = document.getElementById("btn");
+        
+        oBtn.onclick = function() {
+            if (isRun) {
+                timer = setInterval(function () {
+                    oText.innerText = --num;
+                    oBtn.innerText = '暂停';
+                }, 1000)
+            } else {
+                clearInterval(timer);
+                oBtn.innerText = '开始';
+            }
+            isRun = !isRun;
+        }
+
+        // console.log("姜")
+        // //定时函数，执行一次--claerTinmeout 停
+        // setTimeout(function(){
+        //     console.log("hello")
+        // },2000)
+        // console.log("总") 
+
+       ///定时循环函数
+    //    var pig = 9;
+    //     var timer = setInterval(function () {
+    //         console.log(pig);
+    //         pig--;
+    //         if(pig==0){
+    //             clearInterval(timer) 
+    //         }
+    //     }, 1000)
+        // console.log(timer,timer2);
+       // clearInterval()
+
+    </script>
+</body>
+
+</html>

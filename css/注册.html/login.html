@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        /* header 页面首页 */
+        .header .h-logo{
+            width:200px;
+            height:98px;
+            background-image: url("./mistore_logo.png");
+        }
+        .content{
+            width:100;
+            height:490px;
+            /* background-color: blue; */
+             overflow: hidden; 
+             /* 定位背景图中对象中显示定位 背景靠对象上开始显示居中 */
+             background-position: top center;
+             background-image: url("./aece569d6689b4c461bb53efd9eea9c7.jpg");
+        }
+        .mi{
+            height:490px;
+            /* background-color: burlywood; */
+            margin-top: 20px;
+        }
+        .logo-box{
+            width:410px;
+            height:490px;
+            background-color:white;
+            margin-left:auto;
+            margin-right: 0;
+
+        }
+        .zhdl{
+            padding:27px 0 24px;
+            text-align: center;
+            font-size: 24px;
+            color: #666;
+        }
+        .zhdl a{
+          color:#666
+        }
+        .zhdl a.active{
+            color: #f56600;
+        }
+        .content .mi a:hover{
+         color: #f56600;
+        }
+        .zhdl span{
+            width:1px;
+            height:24px;
+            margin: 0 35px 0 31px;
+            border: 1px solid #e0e0e0;
+        }
+        .form-content{
+            width:348px;
+            margin: 0 auto;
+        }
+        .form-content input{
+            border:none;
+            outline:none;
+        }
+        .inp-box{
+            width: 306px;
+            height: 22px;
+            padding: 13px 16px 13px 14px;
+            border:1px solid #e0e0e0;
+            margin-bottom: 14px;
+        }
+        .content .inp-box input{
+             width: 100%;
+        }
+        .content .btn-box input{
+          width: 338px;
+          height: 50px;
+          color: #fff;
+          background-color: #ff6700
+        }
+        .content .btn-box input:hover{
+         cursor: pointer;
+        }
+        .sam {
+            font-size: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .sam a{
+            color: #ff6700;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .min{
+            text-align: center; 
+            margin-top: 20px;
+            border:0 1px solid #666;
+        }
+        .min a{
+            color:#999;
+            font-size:14px;
+        }
+        .min span{
+            border-left:1px solid #999;
+            padding-left: 3px;
+        }
+        .other-login {
+         width: 338px;
+         margin: 0 auto;
+         margin-top: 90px;
+         } 
+        .other-login fieldset {
+        border-width: 1px 0 0 0;
+        border-style: solid;
+        border-color: #e0e0e0;
+        text-align: center;
+       }
+       .other-login legend {
+      color: #999
+       }
+     </style>
+</head>
+<body>
+   <div class="container">
+       <!-- 登录页顶部 -->
+       <div class="header wrapper" >
+         <div class="h-logo"></div>
+     </div>
+     <!-- 登陆页 中间 -->
+       <div class="content">
+           <div class="mi wrapper">
+            <div class="logo-box">
+                <div class="zhdl">
+                    <a class="active" href="javascrip:void(0)">账号登陆</a>
+                    <span></span>
+                    <a href="javascrip:void(0)">扫码登陆</a>
+                </div>
+                <div class="form-content">
+                    <div class="inp-box">
+                      <input type="text" placeholder="邮箱/手机号码/小米ID">
+                    </div>
+                    <div class="inp-box">
+                      <input type="password" placeholder="请输入密码">
+                    </div>
+                    <div class="btn-box">
+                      <input type="button" value="登录">
+                    </div>
+                    <div class="sam">
+                        <a href="javascrip:void(0)">手机短信登陆/注册</a>
+                    </div>
+                    <div class="min">
+                        <!-- <span></span> -->
+                        <a href="javascrip:void(0)">立即注册</a>
+                        <span></span>
+                        <a href="javascrip:void(0)">忘记密码？</a>
+                    </div>
+                </div>
+                  <div class="other-login">
+                    <fieldset>
+                        <legend>其他登录方式</legend>
+                      </fieldset>   
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- footer -->
+            <div class="footer"></div>
+          </div>
+        </body>
+        </html>

@@ -1,0 +1,181 @@
+#header{
+    background-color: #333;
+    height:40px;
+}
+.nav-list{
+    float:left;
+    /* border-left:1px solid #424242; */
+}
+.nav-list a{
+    color:#b0b0b0;
+    height:40px;
+    line-height:40px;  
+    padding:0 7px;
+    border-left:1px solid #424242;
+}
+.nav-list a:hover{
+    color:#fff;
+}
+.nav-list-first a{
+    padding-left: 0;
+    border: none;
+}
+.login{
+    float: right;
+}
+.cart{
+    float: left;
+    width: 120px;
+    position: relative;
+    left:0;
+    top:0;
+    /* 鼠标手状*/
+    cursor: pointer; 
+}
+.cart-num{
+    height: 40px;
+    line-height: 40px;
+    color:#b0b0b0;
+    background: #424242;
+    text-align: center;
+}
+.cart-list{
+    width: 320px;
+    position: absolute;
+    right:0;
+    top:40px;
+    background: #fff;
+    z-index:5;
+    text-align: center;
+    line-height: 100px;
+    /* display:none; */
+    height:0;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    box-shadow:0px 1px 1px 2px rgba(0,0,0,0.2);
+}
+.cart:hover .cart-list{
+    height:100px;
+    /* display:block; */
+}
+.cart:hover .cart-num{
+    color: #ff6700;
+    background-color: #fff;
+}
+.apple{
+    height:100px;
+    /* background-color: aqua; */
+}
+.logo-box{
+    float: left;
+    background: #ff6701;
+    margin-top:22px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+}
+.menu-box{
+    float:left;
+    /* background-color: blue; */
+    margin-left:175px;
+}
+.menu-list{
+    float:left;
+    line-height:100px;
+}
+.menu-list a{
+    padding:0 11px;
+    color:#333;
+    font-size: 16px;
+}
+.menu-list:hover a{
+    color: #ff6701;
+}
+.search-box{
+    float:right;
+    border:1px solid #e0e0e0;
+    width:250px;
+    height:50px;
+    margin-top: 22px;
+}
+.search-box input{
+    width:200px;
+    height:50px;
+    border:none;
+    outline: none;
+    text-indent:10px;
+    float:left;
+}
+.search-box button{
+    width:50px;
+    height:50px;
+    border:none;
+    float:left;
+    background: none;
+    border-left: 1px solid #e0e0e0;
+}
+.search-box.iconsoushuo{
+    color:#616161;
+    font-weight:bold;
+}
+/* 轮播图区域 */
+.swiper .swiper-content{
+    position: relative;
+}
+.swiper .swiper-img,.swiper .swiper-nav{
+    height: 460px;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.swiper .swiper-img{
+    overflow: hidden;
+    background-color: blue;
+    width: 100%;
+    position: relative;
+}
+.swiper .swiper-img img{
+    width: 100%;
+    display: block;
+}
+.swiper .arr-left{
+    width: 41px;
+    height: 69px;
+    color: #fff;
+    position: absolute;
+    left: 234px;
+    top:50%;
+    margin-top:-35px;
+}
+.swiper .arr-left:hover{
+    background-color: rgba(0,0,0,.3);
+}
+.swiper .arr-left:hover .iconfont{
+    color: #fff;
+}
+.swiper .arr-left .iconfont{
+    font-size: 44px;
+    color: #616161;
+}
+.swiper .swiper-nav{
+    width: 234px;
+    background-color: rgba(105,101,101,.6);
+    z-index: 1;
+}
+.swiper .swiper-nav ul{
+    padding:20px 0;
+}
+.swiper .swiper-nav li{
+    padding:0 30px;
+    color: #fff;
+    font-size: 14px;
+    height: 42px;
+    line-height: 42px;
+}
+.swiper .swiper-nav li:hover{
+    background-color: #ff6700;
+    cursor: pointer;
+}
+.swiper .swiper-nav i{
+    float: right;
+}

@@ -1,0 +1,117 @@
+
+.h-logo{
+    height:98px;
+    width:200px;
+    background-image: url("./image/mistore_logo.png");
+} 
+.content{
+    height:588px;
+    width:100%;
+    background-image: url("./image/aece569d6689b4c461bb53efd9eea9c7.jpg");
+    overflow: hidden;
+    background-position: top center;  
+    margin-top: 30px;  
+}
+.pic{
+    height:588px;
+}
+.tic{
+   height:566px;
+   width:410px;
+   background-color:white;
+   margin-left: auto;
+   margin-right: 0;  
+}
+.paa{
+    text-align: center;
+    font-size: 24px;
+    padding: 27px 0 24px;
+    color: #666;
+}
+.paa a{
+    color: #666;
+}
+.paa a.active{
+    color: #f56600;
+}
+.paa span{
+  width:1px;
+  height:24px;
+  margin: 0 35px 0 31px;  
+  border:1px solid #e0e0e0;
+}
+.paa a:hover{
+    color: #f56000;
+}
+.pab{
+   width:348px;
+   margin:0 auto;  
+}
+.pab input{
+    border:none;
+    outline: none;
+}
+.npc{
+    height:22px;
+    width:306px;
+    padding:13px 16px 13px 14px;
+    border:1px solid#e0e0e0;
+    margin-bottom:14px;
+}
+.npc input{
+    width:100%;
+}
+.anniu input{
+    background-color: #f56600;
+    height:50px;
+    width:340px;
+    color: white;
+}
+.anniu input:hover{
+    cursor: pointer;
+}
+.zad a{
+    color: #f56000;
+}
+.zad{
+    margin-top: 14px;
+    margin-bottom: 30px;
+}
+.zad,.zae{
+    text-align: center; 
+}
+.zae a,span{
+    color: #999;
+}
+.pad{
+    width: 339px;
+    margin: 0 auto;
+    margin-top: 130px;
+}
+fieldset{
+    border-width: 1px 0 0;
+    border-style: solid;
+    text-align: center;
+    border-color: #e0e0e0;
+
+  
+}
+.pad legend{
+    color: #999;
+}
+.ol-icon li{
+    float:left;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    background-color: aqua;
+    margin: 0 17px;
+
+
+}
+.ul{
+    padding:0 40px;
+    margin-top: 15px;
+
+}
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="show=!show">点我</button>
+        <transition name="fade">
+            <p v-show="show" v-bind:style="stybleobj">动画实例</p>
+
+        </transition>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                show:true,
+                styleobj:{
+                    fontSize:'30px',
+                    color:'red'
+                }
+            },
+            methods:{
+
+            }
+
+        });
+    </script>
+</body>
+</html>

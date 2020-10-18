@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #app {
+        width: 500px;
+        margin: 0 auto;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        height: 50px;
+        line-height: 50px;
+      }
+      .active {
+        background-color: blueviolet;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h2>Todolist</h2>
+      <hr />
+      <div>
+        名称：<input
+          type="text"
+          v-model="proName"
+          placeholder="请输入商品名称"
+        />
+        价格：<input
+          type="number"
+          v-model="proPrice"
+          placeholder="请输入商品价格"
+        />
+        <button @click="add()">添加</button>
+      </div>
+      <div>
+        <input
+          type="text"
+          v-model="searchValue"
+          placeholder="请输入搜索内容"
+          @keyup="search()"
+        />
+        <button @click="search()">搜索</button>
+      </div>
+      <ul>
+        <li
+          v-for="(obj,index) in list"
+          @click="change(obj)"
+          :class="{active:obj.isActive}"
+          v-if="obj.isInclude"
+        >
+          <!-- 如果你的isActive是true 复选框勾上 -->
+          <input type="checkbox" v-model="obj.isActive" />
+          <span>{{obj.name}}</span>
+          <div class="right">
+            <span>{{obj.name}}</span>
+            <span @click.stop="del(index)">[😘]</span>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <button @click="delAll()">删除选中</button>
+        <span>总价{{zongjia}}</span>
+      </div>
+    </div>
+    <script src="vue/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          list: [
+            {
+              name: "苹果",
+              price: 5000,
+              isActive: false,
+              isInclude: true,
+            },
+            {
+              name: "apple11",
+              price: 6666,
+              isActive: false,
+              isInclude: true,
+            },
+          ],
+          proName: "",
+          proPrice: "",
+          searchValue: "",
+        },
+        methods: {
+          add() {
+            // 获取输入框的name 和price 添加到list数组中
+            this.list.push({
+              name: this.proName,
+              price: Number.parseFloat(this.proPrice),
+              isActive: false,
+              isInclude: true,
+            });
+            this.proName = "";
+            this.proPrice = "";
+          },
+          change(obj) {
+            obj.isActive = !obj.isActive;
+          },
+          totle() {
+            let sum = 0;
+            // 计算list中所有被勾选的价格和
+            this.list.forEach(function (obj) {
+              if (obj.isActive) {
+                sum += obj.price;
+              }
+            });
+            return sum;
+          },
+          del(index) {
+            this.list.splice(index, 1);
+          },
+          delAll() {
+            // 将所有选中的删除  (所有isActive = true )
+            let arr = this.list.filter(function (obj, index) {
+              //过滤出所有符合条件的成员
+              return obj.isActive == false;
+            });
+            this.list = arr;
+          },
+          search() {
+            /* 
+                    过滤操作是假删除 ， 给每一个对象添加一个isInclude标识 true代表应该显示 ，
+                    false 代表应该隐藏
+                    当点击搜索 ->循环list数组 断list数组中每一个对象 包含searchValue 
+                    如果包含把这个对象添加一个isInclude属性为true (代表不删除)
+                    否则 给这个对象的isInclude属性 置为false 
+                     */
+            this.list.forEach((obj, index) => {
+              if (obj.name.includes(this.searchValue)) {
+                obj.isInclude = true; //不用删除
+              } else {
+                obj.isInclude = false;
+              }
+            });
+          },
+        },
+        computed: {
+          zongjia() {
+            let sum = 0;
+            // 计算list中所有被勾选的价格和
+            this.list.forEach(function (obj) {
+              if (obj.isActive) {
+                sum += obj.price;
+              }
+            });
+            return sum;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

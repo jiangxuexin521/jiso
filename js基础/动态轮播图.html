@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <div>
+      <div class="btn-bar">
+        <div class="left-btn">
+          <ul>
+            <li class="arr-btn">&lt;</li>
+            <li>&lt;</li>
+          </ul>
+        </div>
+        <div class="right-btn">
+          <ul>
+            <li class="num-btn active">1</li>
+            <li class="num-btn">2</li>
+            <li class="num-btn">3</li>
+            <li class="num-btn">4</li>
+            <li class="num-btn">5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </head>
+
+  <body>
+    <script>
+      var numBtn = document.getElementsByClassName("num-btn");
+      var imgBox = document.getElementById("img-box");
+      var arrBtn = document.getElementsByClassName("arrBtn");
+      var timer;
+      var nowIndex = 0;
+      var nextIndex = 0;
+      var direction = 0;
+
+      function changeImg(index) {
+        nextIndex = index;
+        //pa
+      }
+      for (var i = 0; i < numBtn.length; i++) {
+        numBtn[i].index = i;
+        numBtn[i].onclick = function () {
+          var_this = this;
+          nextIndex = this.index;
+          if (nextIndex > nowIndex) {
+            direction = -10;
+          } else if (nextIndex < nowIndex) {
+            direction = 10;
+          }
+          //控制数字按钮选中效果
+          for (var j = 0; j < numBtn.length; j++) {
+            numBtn[j].classList.remove("active");
+          }
+          this.classList.add("active");
+          //控制图片滚动的
+          timer = setInterval(function () {
+            if (imgBox.offsetLeft == -490 * _this.index) {
+              clearInterval(timer);
+              nowIndex = nextIndex;
+            } else {
+              imgBox.style.left = imgBox.offsetLeft + direction + "px";
+            }
+          }, 16);
+        };
+      }
+
+      //向右按钮
+      arrBtn[1].onclick = function () {};
+    </script>
+  </body>
+</html>
