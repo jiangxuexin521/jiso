@@ -62,6 +62,51 @@
         var arr1 = ['red', 'blue', 'green'];
         arr[3] = 'pink';
         console.log(arr1);
+        //！不要直接给数组名赋值 否则会覆盖掉以前元素
+
+        //新建数组 里面存放1-10整数
+
+
+
+        //新建一个数组，里面存放10个整数
+        //核心原理：使用循环来追加元素
+        //1，声明一个空数组，使用循环来追加数组
+        //2，循环中的计数器i 可以作为数组元素存入
+        //3，由于数组的索引号是从0开始的，因此计数器从0开始更合适，存入数组的元素要+1
+
+
+        var arr = [];
+        for (i = 0; i < 10; i++) {
+            //arr =i;不要直接给数组名赋值 否则
+            arr[i] = i + 1;
+
+
+        }
+        console.log(arr)
+
+        //数组案例
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+
+        //翻转数组
+        //将数组里的内容反过来
+        var arr = [1, 2, 3, 4, 5];
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = arr[i];
+        }
+        console.log(newArr);
+
+        //交换两个数组的值
+
+
+        //冒泡排序
 
 
 
