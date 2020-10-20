@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.问
+        //console.log(num);
+        //2.
+        console.log(num);//undefined 坑1
+        var num = 10;
+        //3.问
+        function fn() {
+            console.log(11);
+        }
+        fn();
+        //4.
+        fun();//报错
+        var fun = function () {
+            console.log(22);
+        }
+        fun();//可以 但是放上面不可以 
+
+
+        //与解析案例
+        var a = 18;
+        f1();
+        function f1() {
+            var b = 9;
+            console.log(a);
+            console.log(b);
+            var a = '123';
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
