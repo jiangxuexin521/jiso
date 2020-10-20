@@ -95,10 +95,16 @@
         var re = getArrMax([5, 2, 99, 101, 77]);
         console.log(re);
 
-
-
-
-
+        //利用函数判断闰年
+        function isRunYear(year) {
+            //如果是闰年返回true  否则返回faise
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        console.log(isRunYear(2000));
     </script>
 </body>
 
