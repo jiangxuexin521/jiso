@@ -64,38 +64,72 @@
         // 函数名();;--函数的调用者
 
 
-        function getSum(num1, num2) {
-            return (num1 + num2)
-        }
-        console.log(getSum(1, 2));
+        // function getSum(num1, num2) {
+        //     return (num1 + num2)
+        // }
+        // console.log(getSum(1, 2));
 
 
-        function getMax(num1, num2) {
-            if (num1 > num2) {
-                return num1;
+        // function getMax(num1, num2) {
+        //     if (num1 > num2) {
+        //         return num1;
+        //     } else {
+        //         return num2;
+        //     }
+        // }
+        // return num1 > num2 ? num1 : num2;
+        // console.log(getMax(3, 11));
+        // console.log(getMax(9, 7))
+
+        // function getArrMax() {
+        //     var max = [0];
+        //     for (var i = 1; i <= arr.length; i++) {
+        //         if (arr[i] > max) {
+        //             max = arr[i];
+        //         }
+        //     }
+        //     return max;
+        // }
+        // //getArrMax(5, 2, 99, 101, 77);
+        // //在实际开发里面，经常用一个变量来解释函数的返回结果 使用更简单
+        // var re = getArrMax([5, 2, 99, 101, 77]);
+        // console.log(re);
+
+        // //利用函数判断闰年
+        // function isRunYear(year) {
+        //     //如果是闰年返回true  否则返回faise
+        //     var flag = false;
+        //     if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        //         flag = true;
+        //     }
+        //     return flag;
+        // }
+        // console.log(isRunYear(2000));
+
+        // //函数是可以相互调用的
+
+        // function fn1() {
+        //     console.log(11);
+        //     fn2();//在fn函数里面调用了一个fn2函数
+        // }
+        // fn1();//先跳到,被调用的fn1
+
+        // function fn2() {
+        //     consle.jog(22);
+        // }
+
+        //用户输入年份，输出二月份的天数
+
+        function backDay() {
+            var year = prompt('请你输入年份:');
+            if (isRunYear(year)) {//调用函数需加小括号
+                alert('当前年份是闰年二月份有29天');
             } else {
-                return num2;
+                alert('当前年份是平年年二月份有28天');
             }
-        }
-        return num1 > num2 ? num1 : num2;
-        console.log(getMax(3, 11));
-        console.log(getMax(9, 7))
 
-        function getArrMax() {
-            var max = [0];
-            for (var i = 1; i <= arr.length; i++) {
-                if (arr[i] > max) {
-                    max = arr[i];
-                }
-            }
-            return max;
-        }
-        //getArrMax(5, 2, 99, 101, 77);
-        //在实际开发里面，经常用一个变量来解释函数的返回结果 使用更简单
-        var re = getArrMax([5, 2, 99, 101, 77]);
-        console.log(re);
+        } backDay();
 
-        //利用函数判断闰年
         function isRunYear(year) {
             //如果是闰年返回true  否则返回faise
             var flag = false;
@@ -104,7 +138,11 @@
             }
             return flag;
         }
-        console.log(isRunYear(2000));
+
+
+
+
+
     </script>
 </body>
 
