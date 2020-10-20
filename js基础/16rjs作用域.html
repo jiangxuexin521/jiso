@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //js作用域就是代码名字在某个范围内起作用和效果 目的：为了提高程序可靠性 减少命名冲突
+        //2.js作用域(es6)之前:全局作用域  局部作用域
+        //3.全局作用域 :整个script标签之中 或者是一个单独的js文件
+        var num = 10;
+        //4.局部作用域 在函数内部就是局部作用域  代码名字只在函数内部起作用效果
+        function fn() {
+            //局部作用域 和函数有关  也叫函数作用域
+            var num = 20
+            console.log(num);//不同作用域 两者不冲突
+        }
+        // 变量的作用域： 全局和部分变量
+        //1，全局变量 在全局作用下都可使用
+        //注意 如果在函数内部没有声明直接赋值的变量 也是全局变量
+        var num = 10;
+        console.log(num);
+        function fn() {
+            conosle.log(num);
+        }
+        fn();
+        //局部变量 在函数内部的变量就是局部变量
+
+        //注意 函数形参也可以看作局部变量 
+        function fn() {
+            var num1 = 10;
+            num2 = 20;
+        }
+        fn();
+        console.log(num1);
+        console.log(num2);
+        //3.从执行效率来看
+        // 全局 只要浏览器关闭的时候才会销毁 比较占资源
+        // 局部 当我们程序执行完毕就会销毁 比较节约内存资源
+
+
+      //块级作用域：有{}
+
+      //作用域链  内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值 
+
+
+
+
+
+    </script>
+</body>
+
+</html>
