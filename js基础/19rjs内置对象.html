@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Math 数学对象 不是一个构造函数 所以我们不需要 new 来调用 而是直接使用里卖弄的属性和方法即可
+        // console.log(Math.PI);//一个属性 圆周率
+        // console.log(Math.max(1, 99, 3));//9
+        // console.log(Math.max(-1, -10));//-1
+        // console.log(Math.max(1, 99, 'pink'));//NaN
+        // console.log(Math.max());//-Infinity
+
+        //封装自己的数学对象、
+        // var myMath = {
+        //     PI: 3.141592653,
+        //     max: function () {
+        //         var max = arguments[0];
+        //         for (var i = 1; i < arguments.length; i++) {
+        //             if (arguments[i] > max) {
+        //                 max = arguments[i];
+        //             }
+        //         }
+        //         return max;
+        //     },
+        //     min: function () {
+        //         var min = arguments[0];
+        //         for (var i = 1; i < arguments.length; i++) {
+        //             if (arguments[i] < min) {
+        //                 min = arguments[i];
+        //             }
+        //         }
+        //         return min;
+        //     }
+        // }
+        // console.log(myMath.PI);
+        // console.log(myMath.max(1, 12, 3));
+        // console.log(myMath.min(1, 12, 3));
+
+
+        // //绝对值方法
+        // console.log(Math.abs(1));//1
+        // console.log(Math.abs(-1));//1
+        // console.log(Math.abs('-1'));//会转换成数字型
+        // console.log(Math.abs('pink'));//NaN
+
+        // //三个取整方法
+
+        // //1.Math.floor()向下取整
+        // console.log(Math.floor(1.1));//1
+        // console.log(Math.floor(1.99));//1
+        // //2,Math.ceil 向上取整
+
+        // console.log(Math.floor(1.1));//2
+        // console.log(Math.floor(1.99));//2
+
+        // //Math.round 四舍五入 其他数字都是四舍五入 但是.5往大取！
+        // console.log(Math.round(1.1));//1
+        // console.log(Math.round(-1.5));//-1
+        // //......
+
+        // //随机数方法 random()返回一个随机的小数[0-1)左闭右开 能取到0
+        // //2.这个方法里面不跟参数
+        // //3.代码验证
+
+
+        // console.log(Math.random());
+        // // function getRandom() {
+        // //     return Math.random();
+        // // }
+
+        // //4.我们想要得到两个数之间的随机整数  并且包括这两个数
+        // //Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+
+        // function getRandom(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
+        // console.log(getRandom(1, 10));
+
+        // //5.随机点名
+        // var arr = ['陆雨', '牛硕', '姜雪欣', '李悦', '任健邦', '张三'];
+        // console.log(arr[getRandom(0, arr.length - 1)]);
+
+
+        //猜字游戏
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 10);
+        while (true) {//死循环
+            var num = prompt(' 你来猜？1-10之间');
+            if (num > random) {
+                alert('你猜大了');
+            } else if (num < random) {
+                alert('你猜小了哦');
+            } else {
+                alert('你好聪明哦，猜对了');
+                break;
+            }
+
+        }
+
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 50);
+        for (var i = 1; i <= 10; i++) {
+            var num = prompt(' 你来猜？1-10之间');
+            if (num > random) {
+                alert('你猜大了');
+            } else if (num < random) {
+                alert('你猜小了哦');
+            } else {
+                alert('你好聪明哦，猜对了');
+                break;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
