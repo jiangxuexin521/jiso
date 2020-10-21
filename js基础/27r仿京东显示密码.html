@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            top: 9px;
+            right: 2px;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="image/闭眼.jpg" alt="" id="eye">
+        </label>
+        <input type="password" name="" id="pd">
+    </div>
+    <script>
+        var flag = 0;
+        var eye = document.getElementById('eye');
+        var pd = document.getElementById('pd');
+        eye.onclick = function () {
+            //点击一次之后 flag一定要变化
+            if (flag == 0) {
+                pd.type = 'text';
+                eye.src = 'image/睁眼.jpg'
+                flag = 1;//赋值操作
+            } else {
+                pd.type = 'password';
+                eye.src = 'image/闭眼.jpg'
+
+                flag = 0;
+            }
+
+        }
+        //算法 flag变量   来判断flag的值 如果是1就切换成为文本框 ，flag设置为0，如果是0就切换为密码框，flag设置为1
+
+        //flag=1;就切换成文本框
+        //flag=0；就切换为密码框
+    </script>
+</body>
+
+</html>
