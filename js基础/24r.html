@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: cadetblue;
+        }
+
+        img {
+            width: 400px;
+            height: 400px;
+        }
+
+        #happy {
+            background-color: blueviolet;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="happy">我的好盆友们!!!</div>
+    <button id="jxx">酱酱子</button>
+    <button id="ln">老牛</button>
+    <button id="qqz">秋秋子</button>
+    <button id="lyu">悦悦小仙女</button>
+    <button id="ly">小鹿</button>
+    <img src="image/jxx.jpg" alt="">
+    <script>
+        var jxx = document.getElementById('jxx');
+        var ln = document.getElementById('ln');
+        var qqz = document.getElementById('qqz');
+        var lyu = document.getElementById('lyu');
+        var ly = document.getElementById('ly');
+        var img = document.querySelector('img');
+        jxx.onclick = function () {
+            img.src = 'image/jxx.jpg';
+            alert('酱酱子是个美女！')
+
+        }
+        ln.onclick = function () {
+            img.src = 'image/ln.jpg';
+            alert('下一位 是个小可爱')
+        }
+        qqz.onclick = function () {
+            img.src = 'image/qqz.jpg';
+            alert('下一位 这是个什么东东....')
+        }
+        lyu.onclick = function () {
+            img.src = 'image/lyu.jpg';
+            alert('下一位 学霸悦姐 小仙女')
+        }
+        ly.onclick = function () {
+            img.src = 'image/ly.jpg';
+            alert('下一个 美女美女')
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
