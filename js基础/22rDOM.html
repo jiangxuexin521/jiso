@@ -56,8 +56,8 @@
     console.log(ol.getElementsByTagName('li')); -->
 
 
-    <div class="box">盒子</div>
-    <div class="box">盒子</div>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
     <div id="nav">
         <ul>
             <li>首页</li>
@@ -67,8 +67,20 @@
     </div>
 
 </body>
+<script>
 
-
+    //1.getElementsByClassName 根据类名 获得某些元素配合
+    var boxs = document.getElementsByClassName('box');
+    console.log(box);
+    //2.querySelsctor 返回指定选择器的第一个对象 .box #nav
+    var firstBox = document.querySelector('.box');
+    console.log(firstBox);
+    var li = document.querySelector('li');
+    console.log(li);
+    var nav = document.querySelector('#nav')//id
+    //3.querySelectorAll(返回指定选择器的所有元素对象集合)
+    var allBox = document.querySelectorAll('.box');
+    console.log(allBox)
 
 
 </script>
