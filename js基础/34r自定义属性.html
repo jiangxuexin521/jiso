@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script>
+        var div = document.querySelector('div');
+        //1.获取元素的属性值
+        //（1）element.属性 获取的是内置属性值
+        console.log(div.id);
+        //(2)element.getAttribute('属性') 自己添加定义的属性
+        console.log(div.getAttribute('id'));
+
+        //2.设置元素属性值
+        //element.属性="";
+        div.id = 'text';
+        //2.element.setAttribute('属性','值');主要针对自定义属性
+
+        div.setAttribute('idex', '2');
+    </script>
+</body>
+
+</html>
