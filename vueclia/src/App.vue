@@ -3,6 +3,7 @@
     <!-- 哈哈
     <h2>dfghjk ggl; hehe</h2>
     <test></test>-->
+
     <router-view></router-view>
 
     <router-link to="/home">首页</router-link>
