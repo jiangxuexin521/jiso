@@ -1,25 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from './../views/Home'
-import test from './../views/test'
+import Home from '../views/Home.vue'
+import Test from '../views/Test'
+import Test3 from '../views/Test3'
+import A from '@/views/A'
+import B from '@/views/B'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
+ {
     path:'/home',
-    component:Home
-  },{
+    component:Home,
+    children:[{
+      path:'a',
+      component:A
+    },{
+      path:'b',
+      component:B
+    }]
+  },
+  ,{
     path:'/test',
-    component:test
+    name:'test',
+    component:Test
+  },
+  ,{
+    path:'/test3/:id',
+    name:'test3',
+    component:Test3
+  },{
+    path:'/:id',
+    redirect:'/test3/:id'
   }
+  
 ]
-
 
 const router = new VueRouter({
   mode: 'history',
