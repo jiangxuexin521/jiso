@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="app">
-      <h2 @click="change">{{msg}}</h2>
-      <p>{{a}}</p>
-    </div>
-  </body>
-  <script src="vue.js"></script>
-  <script>
-    let vm = new Vue({
-      el: "#app",
-      data: {
-        msg: "hello",
-        a: "me",
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2 @click="change">{{msg}}</h2>
+    <p>{{a}}</p>
+  </div>
+</body>
+<script src="vue.js"></script>
+<script>
+  //编程范式：声明式编程
+  let vm = new Vue({
+    el: "#app",//用于挂载要管理的元素
+    data: {//定义数据
+      msg: "hello",
+      a: "me",
+    },
+    methode: {
+      change() {
+        this.msg = "姜雪欣";
       },
-      methode: {
-        change() {
-          this.msg = "姜雪欣";
-        },
-      },
-    });
-    console.log(vm.msg);
-    console.log(vm.$el);
-    console.log(vm.$data.msg);
-  </script>
+    },
+  });
+  console.log(vm.msg);
+  console.log(vm.$el);
+  console.log(vm.$data.msg);
+</script>
+
 </html>

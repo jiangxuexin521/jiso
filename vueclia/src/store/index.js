@@ -46,10 +46,8 @@ export default new Vuex.Store({
 
       }
       //数据回来修改list->调用mutation
-
-    }
-    //数据回来修改list->调用mutation 
-  },
+},
   modules: {
   }
 })
+ 
