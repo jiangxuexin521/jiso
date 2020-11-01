@@ -1,6 +1,6 @@
 <template>
     <div>
-    <ul>
+    <ul class="list">
         <li class="a" v-for="obj in fenleiList" :key="obj.id">
             <img :src="obj.img" alt="">
             <p>{{obj.name}}</p>
@@ -21,11 +21,10 @@ import axios from 'axios'
         created(){
             axios.get('http://admin.gxxmglzx.com/tender/test/get_type')
             .then((res)=>{
-                console.log(res.data)
-                let result=res.data;
-                if(result.errcode==200){
-                 this.fenleiList=result.data;
-                }
+                console.log(res.data.data)
+                if(res.data.errcode==200){
+                 this.fenleiList=res.data.data;
+            }
             }).catch((error)=>{
                 console.log(error)
             })
@@ -35,13 +34,18 @@ import axios from 'axios'
 </script>
 
 <style lang="scss" scoped>
-  .a{
-    float:left;
+.list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.a{
+    width:20%;
     text-align: center;
-   }
-   .a img{
-       height:55px;
-       margin: 10px;
-   }
+     margin-top: 0.3rem;
+
+}
+.a img{
+    width:60%;
+}
 
 </style>
