@@ -5,6 +5,11 @@ import store from './store'
 import '@/assets/css/common.css'
 import '@/assets/js/rem.js'
 
+
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+
 Vue.config.productionTip = false
 
 new Vue({
