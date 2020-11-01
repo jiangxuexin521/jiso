@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        #container{
+
+        #container {
             width: 1000px;
             height: 550px;
             border: 1px solid;
             margin: 0 auto;
         }
-        #ground{
+
+        #ground {
             width: 1000px;
             height: 500px;
             /*background: orange;*/
             position: relative;
         }
-        #control{
+
+        #control {
             width: 1000px;
             height: 50px;
             line-height: 50px;
         }
-        #brand{
+
+        #brand {
             float: left;
         }
-        #buttons{
+
+        #buttons {
             float: right;
         }
-        .block{
+
+        .block {
             width: 20px;
             height: 20px;
-            background: orange;
+            background: green;
             float: left;
         }
-        .snake-block{
+
+        .snake-block {
             background: red;
             position: absolute;
         }
-        .food-block{
+
+        .food-block {
             background: blue;
             position: absolute;
         }
-
     </style>
 </head>
+
 <body>
     <div id="container">
         <div id="ground">
@@ -70,10 +79,10 @@
         var bDie = false;
         var bPause = false;
 
-        oStart.onclick = function(){
-            if(bDie){
+        oStart.onclick = function () {
+            if (bDie) {
                 oGround.removeChild(oFdiv);
-                for(var i=0;i<snakeBody.length;i++){
+                for (var i = 0; i < snakeBody.length; i++) {
                     oGround.removeChild(snakeBody[i]);
                 }
                 snakeBody = [];
@@ -81,22 +90,22 @@
                 createFood();
                 createSnake();
                 bDie = false;
-                timer = setInterval(move,200);
-            }else{
-                if(bPause){
-                    timer = setInterval(move,200);
+                timer = setInterval(move, 200);
+            } else {
+                if (bPause) {
+                    timer = setInterval(move, 200);
                 }
 
             }
 
         }
 
-        oPause.onclick = function(){
+        oPause.onclick = function () {
             bPause = true;
             clearInterval(timer);
         }
         //初始化草场
-        for(var i=0;i<50 * 25;i++){
+        for (var i = 0; i < 50 * 25; i++) {
             var oGdiv = document.createElement('div');
             oGdiv.className = 'block';
             oGround.appendChild(oGdiv);
@@ -104,8 +113,8 @@
 
         //创建蛇
         var snakeBody = [];
-        function createSnake(){
-            for(var i=0;i<3;i++){
+        function createSnake() {
+            for (var i = 0; i < 3; i++) {
                 var oSdiv = document.createElement('div');
                 oSdiv.className = 'block snake-block';
                 oSdiv.style.top = '60px';
@@ -118,59 +127,59 @@
 
         //创建食物
         var oFdiv = null;
-        function createFood(){
-            var bFlag=false;
+        function createFood() {
+            var bFlag = false;
             var iFoodLeft;
             var iFoodTop;//标识食物是否重新生成；false代表不用
-            do{
+            do {
                 bFlag = false;
                 iFoodLeft = parseInt(Math.random() * 50) * 20;
                 iFoodTop = parseInt(Math.random() * 25) * 20;
-                for(var i=0;i<snakeBody.length;i++){
-                    if(snakeBody[i].offsetLeft == iFoodLeft && snakeBody[i].offsetTop == iFoodTop){
+                for (var i = 0; i < snakeBody.length; i++) {
+                    if (snakeBody[i].offsetLeft == iFoodLeft && snakeBody[i].offsetTop == iFoodTop) {
                         bFlag = true;
                     }
                 }
 
-            }while(bFlag);
+            } while (bFlag);
 
             oFdiv = document.createElement('div');
             oFdiv.className = 'block food-block';
-            oFdiv.style.top = iFoodTop +'px';
-            oFdiv.style.left = iFoodLeft +'px';
+            oFdiv.style.top = iFoodTop + 'px';
+            oFdiv.style.left = iFoodLeft + 'px';
             oGround.appendChild(oFdiv);
 
         }
         createFood();
         //蛇移动
         var next = null
-        function move(){
+        function move() {
             var snakeHead = snakeBody[0];
             //找到下一个该去的位置
-            if(direction == 'right'){
+            if (direction == 'right') {
                 next = {
-                    top:snakeHead.offsetTop,
-                    left:snakeHead.offsetLeft + 20
+                    top: snakeHead.offsetTop,
+                    left: snakeHead.offsetLeft + 20
                 }
-            }else if(direction == 'left'){
+            } else if (direction == 'left') {
                 next = {
-                    top:snakeHead.offsetTop,
-                    left:snakeHead.offsetLeft - 20
+                    top: snakeHead.offsetTop,
+                    left: snakeHead.offsetLeft - 20
                 }
-            }else if(direction == 'top'){
+            } else if (direction == 'top') {
                 next = {
-                    top:snakeHead.offsetTop - 20,
-                    left:snakeHead.offsetLeft
+                    top: snakeHead.offsetTop - 20,
+                    left: snakeHead.offsetLeft
                 }
-            }else if(direction == 'down'){
+            } else if (direction == 'down') {
                 next = {
-                    top:snakeHead.offsetTop + 20,
-                    left:snakeHead.offsetLeft
+                    top: snakeHead.offsetTop + 20,
+                    left: snakeHead.offsetLeft
                 }
             }
 
             //蛇吃食物，增长身体
-            if(oFdiv.offsetLeft == next.left && oFdiv.offsetTop == next.top){
+            if (oFdiv.offsetLeft == next.left && oFdiv.offsetTop == next.top) {
                 oFdiv.className = 'block snake-block';
                 snakeBody.unshift(oFdiv);
                 createFood();
@@ -183,18 +192,18 @@
             }
 
             //判断蛇是否吃到自己，是否撞墙
-            for(var i=1;i<snakeBody.length;i++){
+            for (var i = 1; i < snakeBody.length; i++) {
                 snakeHead = snakeBody[0];
-                if(snakeHead.offsetLeft == snakeBody[i].offsetLeft
-                        && snakeHead.offsetTop == snakeBody[i].offsetTop){
+                if (snakeHead.offsetLeft == snakeBody[i].offsetLeft
+                    && snakeHead.offsetTop == snakeBody[i].offsetTop) {
                     bDie = true;
                     alert('Game Over');
                     clearInterval(timer);
                 }
             }
 
-            if(snakeHead.offsetLeft<0 || snakeHead.offsetLeft > 980 ||
-                    snakeHead.offsetTop<0 || snakeHead.offsetTop > 480){
+            if (snakeHead.offsetLeft < 0 || snakeHead.offsetLeft > 980 ||
+                snakeHead.offsetTop < 0 || snakeHead.offsetTop > 480) {
                 alert('Game Over');
                 bDie = true;
                 clearInterval(timer);
@@ -202,23 +211,23 @@
 
         }
 
-        var timer = setInterval(move,200);
+        var timer = setInterval(move, 200);
 
 
         //暂停开始
 
         //控制蛇移动
 
-        document.onkeydown = function(e){
+        document.onkeydown = function (e) {
             e = e || window.event;
             var kc = e.which || e.keyCode;
-            if(kc == 37 && direction!='right'){
+            if (kc == 37 && direction != 'right') {
                 direction = 'left';
-            }else if(kc == 38 && direction!='down'){
+            } else if (kc == 38 && direction != 'down') {
                 direction = 'top';
-            }else if(kc == 39 && direction!='left'){
+            } else if (kc == 39 && direction != 'left') {
                 direction = 'right';
-            }else if(kc == 40 && direction!='top'){
+            } else if (kc == 40 && direction != 'top') {
                 direction = 'down';
             }
 
@@ -228,4 +237,5 @@
 
     </script>
 </body>
+
 </html>

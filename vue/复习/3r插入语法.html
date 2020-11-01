@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Mustach 语法 双花括号{{}} -->
+    <div id="app">
+        <h2>{{message}}</h2>
+        <h2>{{message}},姜雪欣</h2>
+        <!-- 语法中不仅仅可以直接写变量 也可以写就简单的表达式 -->
+        <h2>{{firstName+''+lastName}}</h2>
+        <h2>{{counter*2}}</h2>
+
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: '你好啊',
+                firstName: '姜',
+                lastName: '雪欣',
+                counter: 100
+            },
+        })
+    </script>
+
+</body>
+
+</html>

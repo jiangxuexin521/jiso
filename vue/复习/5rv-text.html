@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- v-text不常用 -->
+
+<body>
+    <div id="app">
+        <h2>{{message}},大美女</h2>
+        <h2 v-text="message"></h2>
+        <script src="../vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    message: '你好啊'
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>
