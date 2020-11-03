@@ -9,18 +9,16 @@
 
 <body>
     <div id="app">
-        <!-- v-if 和 v-show 区别  存在不存在DOM中 -->
-        <h2 v-if="isShow">{{message}}</h2>
-        <!-- v-show:当条件为false时，v-show只是给我们的元素添加一个行内样式:display:noone -->
-        <h2 v-show="isShow" id="bbb">{{message}}</h2>
+        <ul>
+            <li v-for="obj in letter">{{obj}}</li>
+        </ul>
     </div>
     <script src="../vue.js"></script>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
-                message: '你好',
-                isShow: true
+                letter: ['A', 'B', 'C', 'D']
             }
         })
     </script>

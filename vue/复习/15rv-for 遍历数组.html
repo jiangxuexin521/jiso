@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1. 在遍历过程中没有使用索引值 -->
+        <ul>
+            <li v-for="obj in name">{{obj}}</li>
+        </ul>
+        <!-- 2.在遍历过程中 获取索引值 -->
+        <ul>
+            <li v-for="(item,index) in name">
+                {{index+1}}.{{item}}
+            </li>
+        </ul>
+        <!-- 1.在遍历对象的过程中如果只是获取一个值 那么获取到的是值 -->
+        <ul>
+            <li v-for="obj in info">{{obj}}</li>
+        </ul>
+        <ul>
+            <li v-for="(value,key) in info">{{value}}:{{key}}</li>
+        </ul>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                name: ['姜雪欣', '牛硕', '陆雨'],
+                info: {
+                    name: '姜雪欣',
+                    height: 171,
+                    age: 18
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
