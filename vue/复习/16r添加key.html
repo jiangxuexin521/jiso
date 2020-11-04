@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="obj in letter">{{obj}}</li>
+            <li v-for="obj in letter" :key="obj">{{obj}}</li>
         </ul>
     </div>
     <script src="../vue.js"></script>
