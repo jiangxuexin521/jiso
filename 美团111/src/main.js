@@ -2,14 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import '@/assets/css/common.css'
+import '@/assets/css/reset.css'
 import '@/assets/js/rem.js'
-
-
-import Vant from 'vant';
-import 'vant/lib/index.css';
-
+import '@/assets/icon/iconfont.css'
+import Vant from 'vant'
 Vue.use(Vant);
+import 'vant/lib/index.css'
+
+
 Vue.config.productionTip = false
 
 new Vue({
