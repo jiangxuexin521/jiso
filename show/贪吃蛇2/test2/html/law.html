@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法规查询</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../element/index.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div id="app" class="law-container">
+        <el-container>
+            <el-aside width="17%">
+                <div class="law-logo">
+                    <img src="../images/logo.png" alt="">
+                    <div class="law-title">法规查询提醒系统</div>
+                </div>
+                <el-menu class="el-menu-vertical-demo" text-color="#001d6f">
+                    <el-submenu index="1">
+                        <template slot="title">
+                            <i class="iconfont icon-zuzhijiagou"></i>
+                            <span>发文部门</span>
+                        </template>
+                        <el-submenu index="3">
+                            <template slot="title">军委</template>
+                            <el-submenu index="4">
+                                <template slot="title">战区</template>
+                                <el-submenu index="90">
+                                    <template slot="title">战区空军</template>
+                                    <el-menu-item index="166">部门1</el-menu-item>
+                                    <el-menu-item index="199">部门2</el-menu-item>
+                                </el-submenu>
+                            </el-submenu>
+                        </el-submenu>
+                    </el-submenu>
+                </el-menu>
+            </el-aside>
+            <el-container class="law-main">
+                <el-header height="108px">
+                    <div class="header-left">
+                        <span class="iconfont icon-santiaoxian list"></span>
+                        <span class="list position-txt">位置：</span>
+                        <el-breadcrumb class="list" separator="/">
+                            <el-breadcrumb-item>首页</el-breadcrumb-item>
+                            <el-breadcrumb-item>法规查询提醒</el-breadcrumb-item>
+                        </el-breadcrumb>
+                    </div>
+                    <div class="header-right">
+                        <a href="#" class="header-icons news active"></a>
+                        <a href="#" class="header-icons message"></a>
+                        <a href="#" class="header-icons mine"></a>
+                        <a href="#" class="header-icons out"></a>
+                    </div>
+                </el-header>
+                <el-main>
+                    <div class="main-tabs">
+                        <ul class="main-tabs-right">
+                            <li class="export-btn">导出</li>
+                            <li>
+                                <el-select v-model="form.region" size="medium" placeholder="请选择类别">
+                                    <el-option label="区域一" value="shanghai"></el-option>
+                                    <el-option label="区域二" value="beijing"></el-option>
+                                </el-select>
+                            </li>
+                            <li>
+                                <el-date-picker type="date" size="medium" placeholder="选择日期" placeholder="请选择时间"
+                                    v-model="form.date1" style="width: 100%;"></el-date-picker>
+                            </li>
+                            <li class="search-box">
+                                <el-input v-model="form.name" size="medium" placeholder="请输入搜索内容">
+                                    <i slot="prefix" class="el-input__icon el-icon-search"></i>
+                                    <i slot="suffix" class="el-input__icon iconfont icon-Shape"></i>
+                                </el-input>
+                            </li>
+                        </ul>
+                        <el-tabs v-model="editableTabsValue" type="card">
+                            <el-tab-pane label="全部" name="全部">
+                                <div class="main-content">
+                                    <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark"
+                                        style="width: 100%" border :header-cell-style="{background:'#fafafa'}">
+                                        <el-table-column type="selection" width="55">
+                                        </el-table-column>
+                                        <el-table-column label="序号" width="120">
+                                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="法规名称" width="120">
+                                        </el-table-column>
+                                        <el-table-column prop="address" label="法规分类" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="完成时间" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="下载" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="条令内容" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="isdone" label="相关工作落实" show-overflow-tooltip>
+                                            <template slot-scope="scope">
+                                                <span v-if="scope.row.isdone == '未落实'"
+                                                    class="isdone unfinish">未落实</span>
+                                                <span v-else-if="scope.row.isdone == '已落实'"
+                                                    class="isdone finish">已落实</span>
+                                                <span v-else="scope.row.isdone == '超时'"
+                                                    class="isdone overtime">超时</span>
+                                            </template>
+                                        </el-table-column>
+                                    </el-table>
+                                    <div class="page-box">
+                                        <el-pagination :page-size="100" layout="total, prev, pager, next, jumper"
+                                            :total="1000">
+                                        </el-pagination>
+                                    </div>
+                                </div>
+                            </el-tab-pane>
+                            <el-tab-pane label="已落实" name="已落实">
+                                <div class="main-content">
+                                    <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark"
+                                        style="width: 100%" border :header-cell-style="{background:'#fafafa'}">
+                                        <el-table-column type="selection" width="55">
+                                        </el-table-column>
+                                        <el-table-column label="序号" width="120">
+                                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="法规名称" width="120">
+                                        </el-table-column>
+                                        <el-table-column prop="address" label="法规分类" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="完成时间" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="下载" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="条令内容" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="isdone" label="相关工作落实" show-overflow-tooltip>
+                                            <template slot-scope="scope">
+                                                <span v-if="scope.row.isdone == '未落实'"
+                                                    class="isdone unfinish">未落实</span>
+                                                <span v-else-if="scope.row.isdone == '已落实'"
+                                                    class="isdone finish">已落实</span>
+                                                <span v-else="scope.row.isdone == '超时'"
+                                                    class="isdone overtime">超时</span>
+                                            </template>
+                                        </el-table-column>
+                                    </el-table>
+                                    <div class="page-box">
+                                        <el-pagination :page-size="100" layout="total, prev, pager, next, jumper"
+                                            :total="1000">
+                                        </el-pagination>
+                                    </div>
+                                </div>
+                            </el-tab-pane>
+                            <el-tab-pane label="未落实" name="未落实">
+                                <div class="main-content">
+                                    <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark"
+                                        style="width: 100%" border :header-cell-style="{background:'#fafafa'}">
+                                        <el-table-column type="selection" width="55">
+                                        </el-table-column>
+                                        <el-table-column label="序号" width="120">
+                                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="法规名称" width="120">
+                                        </el-table-column>
+                                        <el-table-column prop="address" label="法规分类" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="完成时间" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="下载" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="条令内容" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="isdone" label="相关工作落实" show-overflow-tooltip>
+                                            <template slot-scope="scope">
+                                                <span v-if="scope.row.isdone == '未落实'"
+                                                    class="isdone unfinish">未落实</span>
+                                                <span v-else-if="scope.row.isdone == '已落实'"
+                                                    class="isdone finish">已落实</span>
+                                                <span v-else="scope.row.isdone == '超时'"
+                                                    class="isdone overtime">超时</span>
+                                            </template>
+                                        </el-table-column>
+                                    </el-table>
+                                    <div class="page-box">
+                                        <el-pagination :page-size="100" layout="total, prev, pager, next, jumper"
+                                            :total="1000">
+                                        </el-pagination>
+                                    </div>
+                                </div>
+                            </el-tab-pane>
+                            <el-tab-pane label="超时" name="超时">
+                                <div class="main-content">
+                                    <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark"
+                                        style="width: 100%" border :header-cell-style="{background:'#fafafa'}">
+                                        <el-table-column type="selection" width="55">
+                                        </el-table-column>
+                                        <el-table-column label="序号" width="120">
+                                            <template slot-scope="scope">{{ scope.row.date }}</template>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="法规名称" width="120">
+                                        </el-table-column>
+                                        <el-table-column prop="address" label="法规分类" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="完成时间" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="下载" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="name" label="条令内容" show-overflow-tooltip>
+                                        </el-table-column>
+                                        <el-table-column prop="isdone" label="相关工作落实" show-overflow-tooltip>
+                                            <template slot-scope="scope">
+                                                <span v-if="scope.row.isdone == '未落实'"
+                                                    class="isdone unfinish">未落实</span>
+                                                <span v-else-if="scope.row.isdone == '已落实'"
+                                                    class="isdone finish">已落实</span>
+                                                <span v-else="scope.row.isdone == '超时'"
+                                                    class="isdone overtime">超时</span>
+                                            </template>
+                                        </el-table-column>
+                                    </el-table>
+                                    <div class="page-box">
+                                        <el-pagination :page-size="100" layout="total, prev, pager, next, jumper"
+                                            :total="1000">
+                                        </el-pagination>
+                                    </div>
+                                </div>
+                            </el-tab-pane>
+                        </el-tabs>
+                    </div>
+                </el-main>
+            </el-container>
+        </el-container>
+    </div>
+    <!-- import Vue before Element -->
+    <script src="../element/vue.js"></script>
+    <!-- import element -->
+    <script src="../element/index.js"></script>
+    <!-- import axios -->
+    <script src="../element/axios.js"></script>
+    <!-- import index -->
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

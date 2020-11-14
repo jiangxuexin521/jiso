@@ -1,8 +1,13 @@
 <template>
   <div class="list-container">
     <div class="type">
-      <span :class="{active:obj.id==typeId}" v-for="obj in list.label" :key="obj.id" @click="change(obj.id)" >
-          {{ obj.name }} ({{ obj.count }})
+      <span
+        :class="{ active: obj.id == typeId }"
+        v-for="obj in list.label"
+        :key="obj.id"
+        @click="change(obj.id)"
+      >
+        {{ obj.name }} ({{ obj.count }})
       </span>
     </div>
     <ul class="list-box">
@@ -20,15 +25,15 @@
 <script>
 export default {
   props: ["list"],
-  data(){
-    return{
-      typeId:1
-    }
+  data() {
+    return {
+      typeId: 1,
+    };
   },
 
   methods: {
     change(id) {
-      this.$emit("se", id)
+      this.$emit("se", id);
       this.typeId = id;
     },
   },
@@ -49,9 +54,9 @@ export default {
       margin-right: 0.15rem;
       display: inline-block;
       margin-bottom: 0.1rem;
-      &.active{
-        background:#fffbf1;
-        border:1px solid#ffb000;
+      &.active {
+        background: #fffbf1;
+        border: 1px solid#ffb000;
       }
     }
   }

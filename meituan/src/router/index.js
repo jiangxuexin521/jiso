@@ -15,7 +15,6 @@ const routes = [
    path:'/detail',
    component:Detail
  }
- 
 ]
 
 const router = new VueRouter({

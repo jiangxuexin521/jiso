@@ -1,0 +1,89 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+small{font-size:12px;}
+ul,ol{list-style:none;}
+a{text-decoration:none;}
+/* a:hover{text-decoration:underline;} */
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 修改分页的样式 */
+.page-box{
+    padding:20px 0;
+    float: right;
+}
+.el-pager li{
+    border:1px solid #dfdfdf;
+    background: #fff;
+    margin:0 4px;
+    border-radius: 3px;
+    color:#595959;
+    font-weight: normal;
+}
+.el-pager li.active {
+    color: #fff;
+    background: #0177d5;
+}
+.el-table{
+    font-size: 16px;
+}
+
+/* 修改input select  元素样式 */
+.el-input--medium .el-input__inner {
+    height: 44px;
+    line-height: 44px;
+    font-size: 15px;
+}
+
+.el-input--medium .el-input__icon {
+    line-height: 44px;
+}
+/* main-tabs 修改tabs的样式 */
+.el-tabs--card>.el-tabs__header .el-tabs__item{
+    border:none;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__nav{
+    border:none;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
+    background: #fff;
+    color:#001d6f;
+    border-radius: 5px 5px 0 0;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__item {
+    color:#fff;
+    font-size:18px;
+    font-weight: normal;
+    padding: 5px 25px;
+    height:auto;
+}
+.el-tabs__header{
+    margin:0;
+}
+.el-tabs--card>.el-tabs__header{
+    border:none;
+}
+.el-pagination button, .el-pagination span:not([class*=suffix]){
+    font-size: 16px;
+}
+.icon-Shape{
+    color:#4977fc;
+    margin-right:3px;
+}
+.el-pager li{
+    font-size: 16px;
+    min-width: 36.5px;
+    height: 30px;
+    line-height: 30px;
+}

@@ -1,0 +1,158 @@
+/* menu菜单样式重置 */
+.icon-zuzhijiagou{
+    color: #001d6f;
+    font-size: 17px;
+    margin-right: 10px;
+}
+.el-submenu__title{
+    outline: 0px;
+    border-left:5px solid #fff;
+    background-color: #fff;
+}
+.el-submenu__title:focus, .el-submenu__title:hover {
+    outline: 0px;
+    border-left:5px solid #001d6f;
+    background-color: #e9eafc;
+}
+.law-container .el-submenu__title{
+    font-size: 17px;
+}
+.law-container .el-submenu__title i{
+    color:#001d6f;
+    font-size: 17px;
+}
+.el-menu-item{
+    font-size: 17px;
+}
+/* menu菜单样式重置结束 */
+.law-logo{
+    text-align: center;
+}
+.law-logo img{
+    margin-top:2px;
+}
+.law-logo .law-title{
+    color: #001d6f;
+    font-size: 20px;
+    margin-top:-3px;
+    margin-bottom: 10px;
+}
+
+.law-main{
+    background: #eaeff3 url(../images/bg.jpg) right 0 no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+}
+
+.el-header{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-left:20px;
+}
+.header-left{
+    float: left;
+    color:#fff;
+}
+.header-left .list{
+    float: left;
+    font-size: 22px;
+    line-height: 108px;
+    height: 108px;
+
+}
+.header-left .position-txt{
+    margin-left:20px;
+}
+.el-breadcrumb__inner{
+    color:#fff;
+}
+.header-left .el-breadcrumb__item:last-child .el-breadcrumb__inner{
+    color:#fff;
+}
+.header-left .el-breadcrumb__separator{
+    margin: 0 5px;
+    font-weight: 400;
+    color: #fff;
+}
+.header-left .icon-santiaoxian{
+    color:#fff;
+}
+.header-right{
+    float:right;
+    margin:32px 30px 0 0;
+}
+.header-right .header-icons{
+    display: inline-block;
+    width:50px;
+    height:35px;
+    background: url(../images/icons.png) no-repeat;
+    cursor: pointer;
+}
+.header-right .news{
+    background-position: 13px -3px;
+}
+.header-right .active{
+    background-position: 13px -71px;
+}
+.header-right .message{
+    background-position: -50px -1px;
+}
+.header-right .mine{
+    background-position: -113px -3px;
+}
+.header-right .out{
+    background-position: -183px -3px;
+}
+/* 右侧筛选 */
+.main-tabs{
+    position: relative;
+}
+.main-tabs-right{
+    position: absolute;
+    right:-10px;
+    z-index: 3;
+}
+.main-tabs-right li.export-btn{
+    width: 85px;
+    background:#fcc349 ;
+    cursor: pointer;
+    color:#001d6f;
+    text-align: center;
+    line-height: 44px;
+    height: 44px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.main-tabs-right li{
+    width:150px;
+    float: left;
+    margin-right:10px;
+}
+.main-tabs-right li.search-box{
+    width:280px;
+}
+.search-box .el-input__suffix{
+    right:10px;
+}
+/*表格内容区  */
+.main-content{
+    background: #fff;
+    height: calc(100vh - 210px);  
+    padding:20px;   
+    box-sizing: border-box;
+    /* height:calc(100vh-200px); */
+}
+.main-content .isdone{
+    border-radius: 40px;
+    color:#fff;
+    display: inline-block;
+    padding:0px 12px;
+}
+.unfinish{
+    background: #f61717;
+}
+.finish{
+    background: #8a8a8a;
+}
+.overtime{
+    background: #f6ac1e;
+}
