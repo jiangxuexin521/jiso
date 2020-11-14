@@ -43,7 +43,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.bwrapper {
   height: 100vh;
+  overflow: hidden;
 }
 </style>
