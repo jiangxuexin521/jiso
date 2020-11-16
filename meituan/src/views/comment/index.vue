@@ -40,7 +40,7 @@ export default {
           this.list = res.data.data;
           this.$nextTick(() => {
             new BetterScroll(".comment-wrapper", {
-              click: true,
+              click: false,
               bounce: false,
             });
           });
@@ -52,6 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 .comment-wrapper {
-  height: calc(100vh-44px);
+  height: calc(100vh - 44px);
 }
 </style>

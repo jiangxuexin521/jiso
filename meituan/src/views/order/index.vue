@@ -15,12 +15,34 @@
 
     <div class="a">
       <div>
-        <div class="prod-cate-box" v-for="(obj, index) in goods" :key="index">
+        <div
+          class="prod-cate-box"
+          v-for="(obj, typeIndex) in goods"
+          :key="typeIndex"
+        >
           <h2>{{ obj.name }}</h2>
           <ul>
-            <li class="list2" v-for="prod in obj.content" :key="prod.id">
+            <li
+              class="list2"
+              v-for="(prod, index) in obj.content"
+              :key="prod.id"
+            >
               <img class="ppad" :src="prod.img" alt="" />
-              <p>{{ prod.name }}</p>
+              <div>
+                <p>{{ prod.name }}</p>
+                <p>{{ prod.price }}</p>
+              </div>
+              <div class="add">
+                <span
+                  class="iconfont icon-jianhao"
+                  @click="$store.commit('minus', { typeTndex, index })"
+                ></span>
+                <span class="num">{{ prod.count }}</span>
+                <span
+                  class="iconfont icon-jiahao-copy"
+                  @click="$store.commit('add', { typeIndex, index })"
+                ></span>
+              </div>
             </li>
           </ul>
         </div>
@@ -72,13 +94,15 @@ export default {
         console.log(res.data.data);
         this.nav = res.data.data.nav;
         this.goods = res.data.data.goods;
+
+        this.$store.commit("save", this.goods);
         this.$nextTick(() => {
           this.cateScroll = new BetterScroll(".list1", {
-            click: true,
+            click: false,
             bounce: false,
           });
           this.prodScroll = new BetterScroll(".a", {
-            click: true,
+            click: false,
             bounce: false,
             probeType: 3,
           });
@@ -109,7 +133,7 @@ export default {
 
 <style lang="scss" scoped>
 .order-container {
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   display: flex;
   .list1 {
     margin-right: 0.3rem;
@@ -119,7 +143,7 @@ export default {
       padding: 0.18rem 0.24rem 0.44rem;
       background: #f5f5f5;
       &.active {
-        color: red;
+        color: #ffc134;
       }
     }
   }
@@ -128,11 +152,32 @@ export default {
     height: calc(100vh - 94px);
     .list2 {
       display: flex;
+      position: relative;
+      margin-bottom: 0.1rem;
       .ppad {
         width: 1.5rem;
       }
       p {
         flex: 1;
+      }
+      .add {
+        position: absolute;
+        right: 0.2rem;
+        bottom: 0;
+        .icon-jianhao {
+          color: #e2e3e5;
+          vertical-align: middle;
+          font-size: 25px;
+        }
+        .icon-jiahao-copy {
+          color: #ffc134;
+          vertical-align: middle;
+          font-size: 25px;
+        }
+      }
+      .num {
+        margin: 0 0.1rem;
+        vertical-align: middle;
       }
     }
   }

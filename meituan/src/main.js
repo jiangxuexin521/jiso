@@ -4,9 +4,7 @@ import router from './router'
 import store from './store'
 import '@/assets/css/common.css'
 import '@/assets/js/rem.js'
-import '@/assets/icon/iconfont.css'
-
-
+import '@/assets/font/iconfont.css'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
