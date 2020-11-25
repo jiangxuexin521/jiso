@@ -35,9 +35,10 @@
               <div class="add">
                 <span
                   class="iconfont icon-jianhao"
-                  @click="$store.commit('minus', { typeTndex, index })"
+                  v-if="prod.count > 0"
+                  @click="$store.commit('minus', { typeIndex, index })"
                 ></span>
-                <span class="num">{{ prod.count }}</span>
+                <span class="num" v-if="prod.count > 0">{{ prod.count }}</span>
                 <span
                   class="iconfont icon-jiahao-copy"
                   @click="$store.commit('add', { typeIndex, index })"

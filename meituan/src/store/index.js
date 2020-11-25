@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    prodList:[]
+    prodlist:[]
   },
   mutations: {
     save(state,list){
@@ -29,14 +29,13 @@ export default new Vuex.Store({
   
       if(prod.count){
         Vue.set(prod,'count',prod.count-1)
-      }else{
-        Vue.set(prod,'count',1);
       }
     }
   },
   getters:{
     total(state){
       let sum=0;
+      console.log(state.prodlist,111)
       state.prodlist.forEach((type)=>{
         type.content.forEach((prod)=>{
           if(prod.count>0){
