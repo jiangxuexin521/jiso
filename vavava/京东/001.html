@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <script>
+        // 正常dom在前 js在后
+        // $('div').hide();
+        //1.等着页面dom加载完毕再去执行js代码  $(document).ready(function(){ })
+        // $(document).ready(function () {
+        //     $('div').hide();
+        // })
+
+        //     //2.等着页面dom加载完毕再去执行js代码
+        //     $(function () {
+        //         $('div').hide();
+        //     })
+        $('div');//$('div')是一个jquery对象
+        console.log($('div'))
+        //$('div').styie.display 不能使用原生js
+
+    </script>
+
+
+</body>
+
+</html>
