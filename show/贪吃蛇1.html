@@ -41,7 +41,7 @@
         .block {
             width: 20px;
             height: 20px;
-            background: green;
+            background: pink;
             float: left;
         }
 
@@ -64,7 +64,7 @@
         </div>
 
         <div id="control">
-            <div id="brand">javascript 贪吃蛇 by 爱扣钉</div>
+            <div id="brand">酱酱子</div>
             <div id="buttons">
                 <button id="start">开始</button>
                 <button id="pause">暂停</button>
@@ -90,7 +90,7 @@
                 createFood();
                 createSnake();
                 bDie = false;
-                timer = setInterval(move, 200);
+                timer = setInterval(move, 600);
             } else {
                 if (bPause) {
                     timer = setInterval(move, 200);

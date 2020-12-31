@@ -46,3 +46,51 @@ dropCriteria【function】：用户可以构造自己的标准来限制拖动节
 
 initCompleted【function】：经常知道您的表何时已经完全初始化、数据加载和呈现，尤其是当使用Ajax数据源时
 
+
+对于一个插件的的使用，主要是搞懂插件是如何封装的，作用在哪里，作用在哪里，我们需要哪些参数进去，所以我们可以通过给出的示例文件查看一下我们必须传进去的参数
+，其次就是插件有些样式或者事件并不是我们想要的样式，所以我们大致理解插件的封装的过程才进行想要的过程才进行想要的效果的更改；
+orgchart使用过程如下：
+1.HTML页面定义一个div容器：
+<div>
+<div id="chart-container"> </div>
+</div>
+ 
+ 
+ 1.在js中，我们需要讲所需要的数据以children的树形结构进行处理好，这样子orgchart会按照所处理好的数据进行展示。因为我们需要将后台读取的所有的节点根据parentid进行处理好，如：
+ $scope.bindOrgChart = function(vtree,model){
+     angular.forEach(vtree,function(val,key){
+         if(val.NodeLeve<3){
+             var result = $filter('filter')(model,function(fdata){
+                 return fdata.ParentId == val.WorkNodeId;
+             })
+             if(result.length!=0){
+                 val.children = result;
+             }
+             $scope.bindOrgcharts(val.children,model);
+         }
+     })
+ }
+
+ 1.将数据处理之后这时候我们可以定义一个数组datascource存储我们需要展示的数据，其数据形式为:
+ datascource.push({
+     'name':$scope.itemNode[0].name,
+     'children':$scope.getChildren($scope.itemNode[0].children)
+ });
+
+ $('#chart-container').orgchart({
+     'data':datascource[0],
+     'nodeContent':'title',
+     'direction':'12r'
+ });
+ //自适应工作项orgchart高度
+ $("#chart-container").height($("#chart-container.orgchart")[0].offsetWidth + 30);
+在这里需要注意的是，在每次写入插件之前都要先清空一次对应的那个位置的div为空，不然会重复append之前的数据进去；
+1.最后就说需要看一下这个框架的源代码，从而进行更改我们想要的效果，比如：由于点击展开或者收缩的时候，
+比如：由于点击展开或者收缩节点的时候，不是通过店家箭头指示，而是通过点击对应事件的响应，在prepend方法之前用wrap()讲箭头
+事件包含着节点，即：
+if(Number(flags.substr(2,1)){
+    $nodeDiv.children('.title').wrap('<div class="edg verticalEdge bottomEdge"></div>')
+    .prepend('<div><i class="fa'+opts.parentNodeSymbol+'symbol"></i></div>');
+})
+
+

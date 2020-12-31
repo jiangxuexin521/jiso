@@ -1,6 +1,8 @@
 <template>
   <div class="tag-box">
-    <span v-for="obj in tag" :key="obj.id" @click="changeTab(obj.id)" class="tag-item" :class="{'active':currentType == obj.id}">{{obj.name}}({{obj.count}})</span>
+    <span v-for="obj in tag" :key="obj.id" @click="changeTab(obj.id)" class="tag-item" :class="{'active':currentType == obj.id}"
+    >{{obj.name}}({{obj.count}})
+    </span>
   </div>
 </template>
 
