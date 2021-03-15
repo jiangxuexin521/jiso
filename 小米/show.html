@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>风险数据管理</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script type="text/javascript">
+        //rem布局动态更改html
+        (function (win) {
+            var app;
+            function refreshRem() {
+                let size = 1920;
+                let html = document.documentElement;
+                let cli = html.clientWidth;
+                let rem = cli * 100 / size;
+                document.documentElement.style.fontSize = rem + 'px';
+            }
+
+            win.addEventListener('resize', function () {
+                clearTimeout(app);
+                app = setTimeout(refreshRem, 100);
+            }, false);
+            win.addEventListener('pageshow', function (e) {
+                if (e.persisted) {
+                    clearTimeout(app);
+                    app = setTimeout(refreshRem, 100);
+                }
+            }, false);
+
+            refreshRem();
+
+        })(window);
+    </script>
+</head>
+
+<body>
+    <div class="viewport">
+        <!--图表盒子-->
+        <div class="chart" id="chart">
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
